@@ -6,30 +6,32 @@ namespace Parity_Check
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите число");
-            double a;
-            string b = Console.ReadLine();
-            try
+            while (true)
             {
-                a = Convert.ToDouble(b);
-                if (a % 2 == 0)
+                Console.Clear();
+                Console.WriteLine("Введите число");
+                double a;
+                string b = Console.ReadLine();
+                try
                 {
-                    Console.WriteLine("Число " + a + " четное");
-                    Console.ReadKey();
+                    a = Convert.ToDouble(b);
+                    if (a % 2 == 0)
+                    {
+                        Console.WriteLine("Число " + a + " четное");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Число " + a + " нечетное");
+                        Console.ReadKey();
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    Console.WriteLine("Число " + a + " нечетное");
+                    Console.WriteLine("Ошибка, введено не число");
                     Console.ReadKey();
                 }
             }
-            catch(Exception)
-            {
-                Console.WriteLine("Ошибка, введено не число");
-                Console.ReadKey();
-            }
-
-            
         }
     }
 }
